@@ -1,0 +1,89 @@
+.customTitle {
+   font-size: 2rem;
+}
+.customSection {
+   width: 100%;
+   max-width: 420px;
+   min-height: 400px;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   padding: 1rem;
+}
+
+.customForm {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   flex-grow: 1;
+   padding-bottom: 1rem;
+}
+
+.customLink,
+.customLink:visited {
+   color: #fff;
+}
+
+.customInput,
+.customTextarea {
+   font-size: 22px;
+   padding: 0.25rem;
+   border-radius: 0.5rem;
+   border: 1px solid #263238;
+}
+.customButton {
+   padding: 0.25rem;
+   border-radius: 0.5rem;
+   background-color: #1976d2;
+   border: none;
+   color: #fff;
+}
+.customButton:hover {
+   cursor: pointer;
+   background-color: #2196f3;
+}
+.customLabel,
+.customButton {
+   margin-top: 1rem;
+}
+
+.customButton {
+   padding: 0.5rem;
+}
+
+.instructions {
+   font-size: 0.75rem;
+   border-radius: 0.5rem;
+   background: #f44336;
+   color: #fff;
+   padding: 0.25rem;
+   position: relative;
+   bottom: -10px;
+}
+
+.instructions > svg {
+   margin-right: 0.25rem;
+}
+
+.offscreen {
+   position: absolute;
+   left: -9999px;
+}
+
+.hide {
+   display: none;
+}
+
+.valid {
+   color: limegreen;
+   margin-left: 0.25rem;
+}
+
+.invalid {
+   color: #f44336;
+   margin-left: 0.25rem;
+}
+
+.line {
+   display: inline-block;
+}
