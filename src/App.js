@@ -1,5 +1,5 @@
-import CustomRegister from "./CustomRegister";
-import Register from "./Register";
+import CustomRegister from "./components/CustomRegister/CustomRegister";
+import Register from "./components/AntDesignRegister/Register";
 
 
 function App() {

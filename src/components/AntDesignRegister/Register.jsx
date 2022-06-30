@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Space, Typography, Button, Form, Input } from "antd";
-import { PWD_REGEX, USER_REGEX } from "./utils/regexPatterns";
+import { PWD_REGEX, USER_REGEX } from "../../utils/regexPatterns";
 
 const { Paragraph, Title } = Typography;
 
