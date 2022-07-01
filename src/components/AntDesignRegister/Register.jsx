@@ -1,30 +1,16 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Space, Typography, Button, Form, Input } from "antd";
 import { PWD_REGEX, USER_REGEX } from "../../utils/regexPatterns";
 
 const { Paragraph, Title } = Typography;
 
-const Register = () => {
+const Register = ({ user, success, submitHandler }) => {
 
   const userRef = useRef();
-
-  const [user, setUser] = useState("");
-
-  const [pwd, setPwd] = useState("");
-
-  const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     userRef.current.focus();
   }, []);
-
-  const submitHandler = (values) => {
-    const { username, password } = values;
-    setUser(username)
-    setPwd(password)
-    console.log(pwd)
-    setSuccess(true)
-  };
 
   return (
     <Space direction="vertical">

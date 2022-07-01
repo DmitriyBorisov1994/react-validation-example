@@ -1,12 +1,12 @@
-import CustomRegister from "./components/CustomRegister/CustomRegister";
-import Register from "./components/AntDesignRegister/Register";
+import RegisterContainer from "./components/AntDesignRegister/RegisterContainer";
+import CustomRegisterContainer from "./components/CustomRegister/CustomRegisterContainer";
 
 
 function App() {
   return (
     <div className="App">
-      <Register />
-      <CustomRegister />
+      <RegisterContainer />
+      <CustomRegisterContainer />
     </div>
   );
 }

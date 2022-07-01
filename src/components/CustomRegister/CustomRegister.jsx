@@ -1,48 +1,8 @@
-import { useRef, useEffect, useReducer } from "react";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classes from './CustomRegister.module.css'
-import { USER_REGEX, PWD_REGEX } from '../../utils/regexPatterns'
-import { formReducer } from "./formReducer";
 
-const initialState = {
-   user: '',
-   validName: false,
-   userFocus: false,
-   pwd: '',
-   validPwd: false,
-   pwdFocus: false,
-   matchPwd: '',
-   validMatch: false,
-   matchFocus: false,
-   success: false
-}
-
-const CustomRegister = () => {
-   const userRef = useRef();
-
-   const [state, dispatch] = useReducer(formReducer, initialState)
-
-   useEffect(() => {
-      dispatch({ type: 'USER_FOCUS', userIsFocused: true })
-   }, [])
-
-   useEffect(() => {
-      dispatch({ type: 'USER_VALIDATION', nameIsValid: USER_REGEX.test(state.user) })
-   }, [state.user])
-
-   useEffect(() => {
-      dispatch({ type: 'PWD_VALIDATION', pwdIsValid: PWD_REGEX.test(state.pwd) })
-      dispatch({ type: 'MATCH_PWD_VALIDATION', matchIsValid: state.pwd === state.matchPwd })
-   }, [state.pwd, state.matchPwd])
-
-   const handleSubmit = async (e) => {
-      e.preventDefault();
-      const v1 = USER_REGEX.test(state.user);
-      const v2 = PWD_REGEX.test(state.pwd);
-      if (!v1 || !v2) return;
-      dispatch({ type: 'IS_SUCCESS', isSuccess: true })
-   }
+const CustomRegister = ({ state, dispatch, handleSubmit }) => {
 
    return (
       <>
@@ -66,7 +26,6 @@ const CustomRegister = () => {
                      type="text"
                      id="username"
                      className={classes.customInput}
-                     ref={userRef}
                      autoComplete="off"
                      onChange={(e) => dispatch({ type: 'SET_USER', user: e.target.value })}
                      value={state.user}
